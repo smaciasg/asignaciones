@@ -1,0 +1,15 @@
+.contenedor {
+    display: flex;
+    flex-direction: row;
+}
+
+.c1 {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+}
+.c2 {
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+}
