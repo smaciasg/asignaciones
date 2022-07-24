@@ -30,5 +30,10 @@ def repeat(expresion,repeticion):
         tex += f"<p>{expresion}</p>"
     return tex
 
+#EJERCICIO 5: Asegúrate de que si el usuario escribe cualquier ruta distinta a las especificadas, reciba un mensaje de error que diga "¡Lo siento! No hay respuesta. Inténtalo otra vez.”.
+@app.errorhandler(404)
+def pagina_no_encontrada(error):
+    return "¡Lo siento! No hay respuesta. Inténtalo otra vez.!"
+
 if __name__=="__main__":
     app.run(debug=True)
