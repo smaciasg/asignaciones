@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel 2</title>
+    <style>
+        * {
+            margin:  0;
+            padding: 0;
+        }
+           
+        .continer {
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        div.cajas{
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 70px;
+            max-width: fit-content;
+        }
+        div.caja_interna {
+            height: 171px;
+            width: 171px;
+            background-color: var(--color); /*SIRVE PARA ASIGNAR UN COLOR PROVENIENTE DEL SERVER POR MEDIO DE UNA VARIABLE*/ 
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="continer">
+        <div class="bienvenida">
+            <h1>¡Hola bienvenido!</h1>
+        </div>
+        <div class="cajas">
+            {%for i in range(cantidad):%}
+                <div class="caja_interna" id="caja_interna" style="--color: {{ color }}"></div> <!--Aplicar el style permite por der aplicar el color que se necesita y proviene desde la variable petición-->
+            {%endfor%}
+        </div>
+    </div>
+</body>
+</html>
