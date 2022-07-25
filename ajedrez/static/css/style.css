@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div.container {
+    margin: 0 auto;
+}
+
+div.caja_ajedrez{
+    display: flex;
+    max-width: fit-content;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+div.cuadros_tipo1, div.cuadros_tipo2 {
+    width: 25px;
+    height: 25px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px ;
+    min-width:fit-content;
+    max-width: 1481.6px;
+}
