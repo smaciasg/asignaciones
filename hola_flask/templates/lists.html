@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas</title>
+</head>
+<body>
+    <!--VAMOS A PASAR UNA LISTA DE LOS NÚMERO ALEATORIOS-->
+    <h2>Lista de números aleatorios</h2>
+    <ul>
+        {% for num in random_numbers %}
+            <li>{{num}}</li>
+        {% endfor %}
+    </ul>
+    <!--VAMOS A PASAR UNA TABLA CON LOS DATOS DE LA LISTA DE DICCIONARIOS-->
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dic in estudiantes %}
+                <tr>
+                    <td>{{dic['name']}}</td>
+                    <td>{{dic['edad']}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</body>
+</html>
