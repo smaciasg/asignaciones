@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request,redirect
+from flask import Flask, render_template, request,redirect, session
 app = Flask(__name__)
+app.secret_key="Laurelin y Telperion ajá"
 
 @app.route('/')
 def pag_inicial():
@@ -9,7 +10,14 @@ def pag_inicial():
 def crear_usuario():
     print("Obtener información")
     print(request.form)
-    return redirect('/')
+    session["name"] = request.form['name']
+    session["email"] = request.form['email']
+    return redirect('/show')
+
+@app.route('/show')
+def mostar_usuario():
+    return render_template("show.html")
+
 
 @app.errorhandler(404)
 def page_not_found(error):
