@@ -12,14 +12,10 @@
         <h1 style="text-align: center ;">Welcome to the great number game!</h1>
         <h3 style="text-align: center ;">I am thinking of a number beteween 1 and 100</h3>
         <p style="text-align: center ;">Take a guess!</p>
-        <form action="/validar_num" method="post" class="col-5 mx-auto" style="display: flex; flex-direction: column;">
-            <div class="mx-auto" style="display: flex; flex-direction: row;">
-                <input type="text" name="numero" id="numero" class="col-5 mx-auto" required>
-                <input type="submit" value="Submit" class="col-5 mx-auto ">
-
-            </div>
-            <a href="mostrar_ganadores" class="btn btn-primary mx-auto" style="margin: 20px;">Ver ganadores</a>
-        </form>
+        <div class="alto col-6 mx-auto" style="background-color: gray;height: 150px;margin: 30px;display: flex; justify-content: center; align-items: center;"><h2 style="text-align: center ;">¡No era el número, agotó sus 5 intentos!</h2></div>
+        <div style="display: flex;">
+            <a href="/" class="btn btn-primary mx-auto">Jugar de nuevo</a>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Adivinar números</title>
+</head>
+<body>
+    <div class="container col-6 mx-auto" style="margin: 50px; border: 1px silver solid; border-radius: 25px; padding: 30px; background-color: rgb(249, 244, 244);">
+        <h1 style="text-align: center ;">Welcome to the great number game!</h1>
+        <h3 style="text-align: center ;">Registro ganadores</h3>
+        <form action="/listado_ganadores" method="post" class="col-10 mx-auto" style="display: flex; margin: 30px; flex-direction: column;">
+            <div>
+                <label for="nombre" name="nombre" class="col-2 mx-auto">Nombre</label>
+                <input type="text" name="nombre" id="nombre" class=" col-10 mx-auto" required>
+            </div>
+            <div>
+                <label for="alias" name="alias" class="col-2 mx-auto">Alias</label>
+                <input type="text" name="alias" id="alias" class="col-10 mx-auto" required>
+            </div>
+            <div>
+                <label for="intentos" name="intentos" class="col-2 mx-auto">Intentos</label>
+                <input type="number" name="intentos" id="intentos" class="col-10 mx-auto" value="{{5-session['contar_intentos']}}" readonly>
+            </div>
+            <input type="submit" value="Submit" class="col-2 mx-auto">
+        </form>
+    </div>
+</body>
+</html>
