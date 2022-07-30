@@ -10,6 +10,7 @@ lista_contar=[]
 lista_valor_incremeto = []
 @app.route('/')
 def index():
+    global lista_ingresos,lista_valor_incremeto,lista_contar
     session['contadorindex'] = len(lista_ingresos)
     if session is not NULL:
         session['contadorindex'] += 1

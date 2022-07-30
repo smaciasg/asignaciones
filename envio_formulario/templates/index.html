@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Envío de datos</title>
+</head>
+<body>
+    <div class="container mx-auto col-6">
+        <form action="/envio" method="post" class="form">
+            <h2 style="text-align: center;">Envío de información</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="mb-3 col-5">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" required value="{{session['nombre']}}" class="form-control">
+                </div>
+                <div class="mb-3 col-6">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" required value="{{session['apellido']}}" class="form-control">
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div class="mb-3 col-6">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" name="email" id="email" required value="{{session['email']}}" class="form-control">
+                </div>
+                <div class="mb-3 col-3">
+                    <label for="fecha_nacimiento" class="form-label">Fecha nacimiento</label>
+                    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required value="{{session['fecha_nacimiento']}}" class="form-control" min="0">
+                </div>
+                <div class="mb-3 col-2">
+                    <label for="num_hijos" class="form-label">Número de hijos</label>
+                    <input type="number" name="num_hijos" id="num_hijos" required value="{{session['num_hijos']}}" class="form-control" min="0">
+                </div>
+            </div>
+            <div class="mb-3" style="display: flex; justify-content: space-between;">
+                <div class="col-5">
+                    <label for="locacion" class="form-label">Locación</label>
+                    <select name="locacion" id="locacion" required class="form-select">
+                        <option value="Medellin">Medellin</option>
+                        <option value="Botaga">Botaga</option>
+                        <option value="Cali">Cali</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Valencia">Valencia</option>
+                        <option value="Sevilla">Sevilla</option>
+                        <option selected="true" value="{{session['locacion']}}">{{session['locacion']}}</option>
+                    </select>
+                </div>
+
+                <div class="col-5">
+                    <label for="lenguaje_proramacion" class="form-label">Lenguaje programación favorito</label>
+                    <select name="lenguaje_proramacion" id="lenguaje_proramacion" required class="form-select">
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="C">C++</option>
+                        <option selected="true" value="{{session['lenguaje_proramacion']}}">{{session['lenguaje_proramacion']}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+            <input type="submit" value="Campos Opcionales" name="envio_info" class="btn btn-info">
+            {% if session['envio_info']=="Campos Opcionales" %}
+            <div class="container" style="display: flex;">
+                <div class="col-6 mx-auto">
+                    <p>Comentarios</p>
+                    <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
+                </div>
+                <div class="col-6 mx-auto">
+                    <p>Hobbies</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Nadar" id="defaultCheck1" name="multiopcion">
+                        <label class="form-check-label" for="defaultCheck1" name="multiopcion">Nadar
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Leer" id="defaultCheck1" name="multiopcion1">
+                        <label class="form-check-label" for="defaultCheck1" name="multiopcion1">
+                          Leer
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Hacer montañismo" id="defaultCheck1" name="multiopcion2">
+                        <label class="form-check-label" for="defaultCheck1" name="multiopcion2">
+                          Hacer montañismo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Hacer torrentismo" id="defaultCheck1" name="multiopcion3">
+                        <label class="form-check-label" for="defaultCheck1" name="multiopcion3">
+                          Hacer torrentismo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Pintar/Dibujar" id="defaultCheck1" name="multiopcion4">
+                        <label class="form-check-label" for="defaultCheck1" name="multiopcion4">
+                          Pintar/Dibujar
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Conocer restaurantes" id="defaultCheck1" name="multiopcion5">
+                        <label class="form-check-label" for="defaultCheck1" name="multiopcion5">
+                          Conocer restaurantes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Viajar" id="defaultCheck1" name="multiopcion6">
+                        <label class="form-check-label" for="defaultCheck1" name="multiopcion6">
+                          Viajar
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Vivir" id="defaultCheck1" name="multiopcion7">
+                        <label class="form-check-label" for="defaultCheck1" name="multiopcion7">
+                          Vivir
+                        </label>
+                    </div>
+            </div>
+            {%endif%}
+            </div>
+            <input type="submit" value="Enviar Datos" name="envio_info" class="btn btn-danger" style="width: 165px; margin-top:20px">
+        </form>
+    </div>
+</body>
+</html>
