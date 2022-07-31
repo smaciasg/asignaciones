@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+form p {
+    font-size: 13px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#oro,#intentos_restantes{
+    width: 60px;
+    text-align: center;
+    border-radius: 25px;
+    padding-left: 10px;
+}
+
+h4 {
+    color: goldenrod;
+    font-weight: bold;
+}

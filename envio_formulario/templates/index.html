@@ -61,7 +61,9 @@
                 </div>
             </div>
             <div>
+            {% if session['envio_info']!="Campos Opcionales" %}
             <input type="submit" value="Campos Opcionales" name="envio_info" class="btn btn-info">
+            {% endif %}
             {% if session['envio_info']=="Campos Opcionales" %}
             <div class="container" style="display: flex;">
                 <div class="col-6 mx-auto">
